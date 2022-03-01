@@ -195,7 +195,7 @@ class UI {
 
 
 const administrarCitas = new Citas();
-console.log(administrarCitas);
+/* console.log(administrarCitas); */
 const ui = new UI(administrarCitas);
 
 
@@ -231,7 +231,7 @@ function nuevaCita(e) {
         }
 
         transaction.onerror = () => {
-            console.log('hubo un error');
+           /*  console.log('hubo un error'); */
         }
 
         
@@ -255,7 +255,7 @@ function nuevaCita(e) {
         objectStore.add(citaObj);
 
         transaction.oncomplete = function() {
-            console.log('cita agregada');
+           /*  console.log('cita agregada'); */
 
             // Mostrar mensaje de que todo esta bien...
             ui.imprimirAlerta('Se agregó correctamente')
@@ -295,12 +295,12 @@ function eliminarCita(id) {
     objectStore.delete(id);
 
     transaction.oncomplete = () => {
-        console.log(`Cita ${id} Eliminada`);
+       /*  console.log(`Cita ${id} Eliminada`); */
         ui.imprimirCitas();
     }
 
     transaction.onerror = () => {
-        console.log('Hubo un error');
+      /*   console.log('Hubo un error'); */
     }
 }
 
@@ -337,7 +337,7 @@ function crearDB() {
 
     //! si hay error
     crearDB.onerror = function ( ) {
-        console.log(' hubo un error');
+      /*   console.log(' hubo un error'); */
     }
 
     //! si sale bien
@@ -367,7 +367,7 @@ function crearDB() {
         objectStore.createIndex('sintomas', 'sintomas', {unique:false});
         objectStore.createIndex('id', 'id', {unique:true});
 
-        console.log('DB creada y lista');
+       /*  console.log('DB creada y lista'); */
     }
 
 }
